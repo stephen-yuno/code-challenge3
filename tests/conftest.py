@@ -3,18 +3,19 @@ Shared test fixtures for the Verdant Goods Chargeback Prevention API.
 
 Provides:
 - async test client (httpx.AsyncClient against the FastAPI app)
-- test database setup/teardown (in-memory SQLite or temp file)
+- test database setup/teardown (in-memory SQLite)
 - sample transaction and chargeback data factories
 """
 import os
+
+# Force test database before importing app modules
+os.environ["DATABASE_PATH"] = ":memory:"
+os.environ["TESTING"] = "1"
+
 import pytest
 import pytest_asyncio
 from datetime import datetime, timedelta
 from typing import Dict, Any, List
-
-# Force test database before importing app
-os.environ["DATABASE_PATH"] = ":memory:"
-os.environ["TESTING"] = "1"
 
 from httpx import AsyncClient, ASGITransport
 
@@ -102,30 +103,23 @@ def make_chargebacks_dataset() -> List[Dict[str, Any]]:
     """
     records = []
 
-    # 10 from BR (50%), 6 from MX (30%), 4 from CO (20%)
-    # Reason codes: 8 FRAUD, 5 NOT_RECEIVED, 4 NOT_AS_DESCRIBED, 2 DUPLICATE, 1 OTHER
-    # Categories: 8 electronics, 7 apparel, 5 home_goods
     dataset = [
-        # BR - FRAUD - electronics (high concentration)
         ("BR", "FRAUD", "electronics", 300.0, "fraud1@example.com", "510510", 30),
         ("BR", "FRAUD", "electronics", 450.0, "fraud1@example.com", "510510", 45),
         ("BR", "FRAUD", "electronics", 200.0, "fraud2@example.com", "510510", 60),
         ("BR", "FRAUD", "apparel", 80.0, "fraud3@example.com", "411111", 25),
         ("BR", "FRAUD", "home_goods", 150.0, "fraud4@example.com", "422222", 90),
-        # BR - other reasons
         ("BR", "NOT_RECEIVED", "apparel", 55.0, "buyer1@example.com", "433333", 40),
         ("BR", "NOT_RECEIVED", "electronics", 320.0, "buyer2@example.com", "433333", 50),
         ("BR", "NOT_AS_DESCRIBED", "electronics", 275.0, "buyer3@example.com", "444444", 35),
         ("BR", "DUPLICATE", "apparel", 40.0, "buyer4@example.com", "455555", 22),
         ("BR", "OTHER", "home_goods", 60.0, "buyer5@example.com", "466666", 100),
-        # MX
         ("MX", "FRAUD", "electronics", 500.0, "mxbuyer1@example.com", "520520", 55),
         ("MX", "FRAUD", "apparel", 120.0, "mxbuyer2@example.com", "520520", 38),
         ("MX", "NOT_RECEIVED", "home_goods", 90.0, "mxbuyer3@example.com", "533333", 70),
         ("MX", "NOT_AS_DESCRIBED", "apparel", 65.0, "mxbuyer4@example.com", "544444", 28),
         ("MX", "NOT_AS_DESCRIBED", "home_goods", 110.0, "mxbuyer5@example.com", "544444", 42),
         ("MX", "DUPLICATE", "electronics", 350.0, "mxbuyer6@example.com", "555555", 80),
-        # CO
         ("CO", "FRAUD", "apparel", 95.0, "cobuyer1@example.com", "630630", 33),
         ("CO", "NOT_RECEIVED", "home_goods", 180.0, "cobuyer2@example.com", "633333", 48),
         ("CO", "NOT_RECEIVED", "electronics", 420.0, "cobuyer3@example.com", "633333", 65),

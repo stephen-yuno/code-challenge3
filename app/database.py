@@ -1,9 +1,10 @@
 import json
+import os
 import sqlite3
 from pathlib import Path
 from typing import Optional
 
-DB_PATH = Path(__file__).parent.parent / "verdant_goods.db"
+DB_PATH = os.environ.get("DATABASE_PATH", str(Path(__file__).parent.parent / "verdant_goods.db"))
 SEED_DIR = Path(__file__).parent / "seed"
 
 _connection: Optional[sqlite3.Connection] = None
@@ -12,7 +13,7 @@ _connection: Optional[sqlite3.Connection] = None
 def get_connection() -> sqlite3.Connection:
     global _connection
     if _connection is None:
-        _connection = sqlite3.connect(str(DB_PATH), check_same_thread=False)
+        _connection = sqlite3.connect(DB_PATH, check_same_thread=False)
         _connection.row_factory = sqlite3.Row
         _connection.execute("PRAGMA journal_mode=WAL")
         _connection.execute("PRAGMA foreign_keys=ON")
