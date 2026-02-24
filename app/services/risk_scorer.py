@@ -186,8 +186,31 @@ def score_transaction(txn: TransactionRequest) -> RiskScoreResponse:
             risk_factors.append(factor)
             total_score += factor.score
 
-    total_score = min(total_score, 100)
+    # Apply rule engine adjustments
+    from app.services.rule_engine import rule_engine
+
+    txn_data = {
+        "transaction_id": txn.transaction_id,
+        "email": txn.email,
+        "card_bin": txn.card_bin,
+        "card_last_four": txn.card_last_four,
+        "amount": txn.amount,
+        "currency": txn.currency,
+        "billing_country": txn.billing_country,
+        "shipping_country": txn.shipping_country,
+        "ip_country": txn.ip_country,
+        "product_category": txn.product_category,
+        "customer_id": txn.customer_id,
+        "is_first_purchase": txn.is_first_purchase,
+        "timestamp": txn.timestamp,
+    }
+    modifier, action_override = rule_engine.evaluate_all_rules(txn_data)
+    total_score += modifier
+    total_score = min(max(total_score, 0), 100)
+
     risk_level, action = _map_risk_level(total_score)
+    if action_override is not None:
+        action = action_override
 
     # Insert this transaction into DB for future velocity checks
     conn = get_connection()
