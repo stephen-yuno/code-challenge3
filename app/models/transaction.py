@@ -7,8 +7,8 @@ from pydantic import BaseModel, Field
 class TransactionRequest(BaseModel):
     transaction_id: str
     email: str
-    card_bin: str = Field(min_length=6, max_length=6)
-    card_last_four: str = Field(min_length=4, max_length=4)
+    card_bin: str = Field(min_length=6, max_length=6, pattern=r"^\d{6}$")
+    card_last_four: str = Field(min_length=4, max_length=4, pattern=r"^\d{4}$")
     amount: float = Field(gt=0)
     currency: str = Field(default="USD", max_length=3)
     billing_country: str = Field(min_length=2, max_length=2)

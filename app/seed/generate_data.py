@@ -123,9 +123,10 @@ def generate_transactions():
 
     # === SUSPICIOUS PATTERNS (10-12 transactions) ===
 
-    # 1. Velocity abuse: 3 records with same email within 1 hour
-    velocity_base = BASE_DATE - timedelta(hours=2)
-    for i in range(3):
+    # 1. Velocity abuse: 12 records with same email within a few hours
+    #    (challenge explicitly requires "Same email making 10+ transactions in 24 hours")
+    velocity_base = BASE_DATE - timedelta(hours=4)
+    for i in range(12):
         transactions.append({
             "transaction_id": _gen_txn_id(),
             "email": "speed_buyer@temp-mail.org",
@@ -139,7 +140,7 @@ def generate_transactions():
             "product_category": "electronics",
             "customer_id": "cust_speed",
             "is_first_purchase": False,
-            "timestamp": (velocity_base + timedelta(minutes=i * 15)).isoformat() + "Z",
+            "timestamp": (velocity_base + timedelta(minutes=i * 10)).isoformat() + "Z",
         })
 
     # 2. Geo mismatch: 3 records where billing=BR, shipping=CO, IP=MX
@@ -220,7 +221,7 @@ def generate_transactions():
     country_weights = [0.40, 0.35, 0.25]  # BR, MX, CO
     cat_weights = [0.30, 0.40, 0.30]  # electronics, apparel, home_goods
 
-    while len(transactions) < 65:
+    while len(transactions) < 74:
         country = random.choices(COUNTRIES, weights=country_weights)[0]
         category = random.choices(CATEGORIES, weights=cat_weights)[0]
         is_first = random.random() < 0.4

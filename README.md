@@ -8,7 +8,7 @@ A backend service for real-time fraud risk scoring and chargeback pattern analys
 # Install dependencies
 pip install -r requirements.txt
 
-# Generate test data (50+ transactions, 260+ chargebacks)
+# Generate test data (74 transactions, 260 chargebacks)
 python -m app.seed.generate_data
 
 # Start the server
@@ -185,11 +185,11 @@ app/
     disposable_emails.py     # Disposable email domain list
   seed/
     generate_data.py         # Deterministic test data generator
-    transactions.json        # 65 sample transactions
+    transactions.json        # 74 sample transactions
     chargebacks.json         # 260 historical chargebacks
 tests/
   conftest.py                # Test client, fixtures, data factories
-  test_risk_scoring.py       # 37 tests for risk scoring API
+  test_risk_scoring.py       # 39 tests for risk scoring API
   test_chargeback_analysis.py # 20 tests for chargeback analysis
   test_batch_screening.py    # 12 tests for batch scoring
   test_rules.py              # 16 tests for rule configuration
@@ -204,6 +204,7 @@ tests/
 - **Rule engine integration** - Rules are evaluated after the base 6-signal score. Rule modifiers adjust the final score (capped at 0-100), and the most severe action among matching rules overrides the default.
 - **Sequential batch processing** - Transactions in a batch are processed in order. Earlier transactions affect velocity checks for later ones. This is intentional fraud-detection behavior.
 - **Currency assumed USD** - The `currency` field is accepted but amounts are compared in USD. This is documented as a simplification.
+- **IP country as proxy** - The API accepts `ip_country` (2-letter code) rather than a raw IP address. In production, IP geolocation would be resolved server-side; here we accept the resolved country directly to keep the scope focused on risk logic rather than GeoIP integration.
 
 ## Test Data
 
@@ -230,7 +231,7 @@ To regenerate: `python -m app.seed.generate_data`
 python -m pytest tests/ -v
 ```
 
-112 tests covering all endpoints, risk signals, chargeback analysis dimensions, batch processing, rule CRUD, and edge cases. Tests use an in-memory SQLite database for isolation.
+114 tests covering all endpoints, risk signals, chargeback analysis dimensions, batch processing, rule CRUD, and edge cases. Tests use an in-memory SQLite database for isolation.
 
 ## Stretch Goals Status
 

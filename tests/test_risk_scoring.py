@@ -158,6 +158,18 @@ class TestInputValidation:
         assert resp.status_code == 422
 
     @pytest.mark.asyncio
+    async def test_non_numeric_card_bin_returns_422(self, client):
+        txn = make_transaction(card_bin="abcdef")
+        resp = await client.post(SCORE_URL, json=txn)
+        assert resp.status_code == 422
+
+    @pytest.mark.asyncio
+    async def test_non_numeric_card_last_four_returns_422(self, client):
+        txn = make_transaction(card_last_four="abcd")
+        resp = await client.post(SCORE_URL, json=txn)
+        assert resp.status_code == 422
+
+    @pytest.mark.asyncio
     async def test_empty_body_returns_422(self, client):
         resp = await client.post(SCORE_URL, json={})
         assert resp.status_code == 422
