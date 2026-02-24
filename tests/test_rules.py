@@ -278,34 +278,39 @@ class TestRuleIntegration:
     @pytest.mark.asyncio
     async def test_rule_modifier_increases_score(self, client):
         """Adding a rule that matches should increase the risk score."""
-        # First score without the rule (baseline)
+        # First score without the rule (baseline) - use a LOW risk transaction
         txn_base = make_transaction(
             transaction_id="txn_rule_base",
             email="rule_base@gmail.com",
-            amount=600.00,
+            amount=50.00,
             product_category="apparel",
+            billing_country="BR",
+            shipping_country="BR",
+            ip_country="BR",
             is_first_purchase=False,
         )
         resp_base = await client.post(SCORE_URL, json=txn_base)
         base_score = resp_base.json()["risk_score"]
 
-        # Now create a rule that matches this transaction
+        # Now create a rule that matches this transaction profile
         rule = make_rule(
-            name="Apparel over 500",
+            name="All apparel flag",
             conditions=[
-                {"field": "amount", "operator": "gt", "value": 500},
                 {"field": "product_category", "operator": "eq", "value": "apparel"},
             ],
             risk_score_modifier=25,
         )
         await client.post(RULES_URL, json=rule)
 
-        # Score again with the same profile but different id/email
+        # Score again with the same low-risk profile but different id/email
         txn_ruled = make_transaction(
             transaction_id="txn_rule_after",
             email="rule_after@gmail.com",
-            amount=600.00,
+            amount=50.00,
             product_category="apparel",
+            billing_country="BR",
+            shipping_country="BR",
+            ip_country="BR",
             is_first_purchase=False,
         )
         resp_ruled = await client.post(SCORE_URL, json=txn_ruled)

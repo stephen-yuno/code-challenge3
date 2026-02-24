@@ -46,7 +46,7 @@ def make_transaction(**overrides) -> Dict[str, Any]:
 
 def make_low_risk_transaction(**overrides) -> Dict[str, Any]:
     """A clearly safe transaction that should score LOW."""
-    return make_transaction(
+    defaults = dict(
         transaction_id="txn_low_risk",
         email="maria.silva@gmail.com",
         billing_country="BR",
@@ -55,13 +55,14 @@ def make_low_risk_transaction(**overrides) -> Dict[str, Any]:
         product_category="apparel",
         amount=45.00,
         is_first_purchase=False,
-        **overrides,
     )
+    defaults.update(overrides)
+    return make_transaction(**defaults)
 
 
 def make_high_risk_transaction(**overrides) -> Dict[str, Any]:
     """A clearly suspicious transaction that should score HIGH or CRITICAL."""
-    return make_transaction(
+    defaults = dict(
         transaction_id="txn_high_risk",
         email="x7k9m2p@temp-mail.org",
         billing_country="BR",
@@ -70,8 +71,9 @@ def make_high_risk_transaction(**overrides) -> Dict[str, Any]:
         product_category="electronics",
         amount=799.00,
         is_first_purchase=True,
-        **overrides,
     )
+    defaults.update(overrides)
+    return make_transaction(**defaults)
 
 
 def make_chargeback(**overrides) -> Dict[str, Any]:
@@ -156,8 +158,21 @@ def make_chargebacks_dataset() -> List[Dict[str, Any]]:
 
 @pytest_asyncio.fixture
 async def client():
-    """Async test client that talks to the FastAPI app with a fresh DB."""
+    """Async test client that talks to the FastAPI app with a fresh in-memory DB.
+
+    Each test gets an isolated database: we close any existing connection,
+    then re-initialize the schema so tables exist in the new :memory: DB.
+    """
+    from app import database
     from app.main import app
+
+    # Reset the connection so a fresh :memory: DB is created
+    database.close_connection()
+    database.init_db()
+
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://testserver") as ac:
         yield ac
+
+    # Teardown: close connection so next test starts fresh
+    database.close_connection()
