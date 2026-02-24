@@ -670,3 +670,106 @@ Planted patterns:
 3. Create `demo.sh` with curl-based demo walkthrough
 4. Create `run.sh` for quick start
 5. Final review pass
+
+---
+
+## Devil's Advocate Review
+
+Critical analysis of this plan, with actionable recommendations.
+
+### 1. SQL Injection Risk (CRITICAL)
+
+The plan specifies `sqlite3 (stdlib)` for DB access but does not mention parameterized queries anywhere. Every SQL query in `risk_scorer.py` (velocity checks), `chargeback_analyzer.py`, and `rule_engine.py` must use parameterized queries (`?` placeholders). The velocity check is especially dangerous since it accepts user-supplied `email`, `card_bin`, and `ip_country` values directly.
+
+**Recommendation:** Add an explicit note in the plan that ALL queries must use parameterized statements. Consider adding a helper function that enforces this pattern.
+
+### 2. Missing IP Address Field
+
+The challenge document mentions "IP address" and "IP geolocation" as key risk signals (velocity checks: "How many transactions has this email/card/**IP address** made in the last 24 hours?"). The plan's `TransactionRequest` model has `ip_country` but no `ip_address` field. The velocity check description says it checks "email, card_bin, or IP" -- but the schema only stores `ip_country`, not IP address. Multiple transactions from the same country is not the same as multiple transactions from the same IP.
+
+**Recommendation:** Either add an `ip_address` field to the transaction model and schema, or explicitly note that velocity checks use `ip_country` as a proxy and document this as a simplification. The current plan is ambiguous and could lead to a confusing implementation.
+
+### 3. Edge Case: Empty Transaction History
+
+The plan mentions "If no history exists, a default AOV of $120 is used" for amount anomaly. Good. However, the velocity check has no similar handling documented. If the transactions table is empty (fresh start, or after a DB reset), every transaction will have velocity=0 and score 0 points for that signal.
+
+**Recommendation:** This is acceptable behavior but should be documented. Also consider: the first transaction scored gets inserted, then the second one sees velocity=1, etc. This means batch scoring order matters -- transactions earlier in a batch will have lower velocity scores than later ones. Document this as a known characteristic.
+
+### 4. Batch Scoring Order Dependency (MEDIUM)
+
+Related to the above: the plan says "Each scored transaction is also inserted into the transactions table so future velocity checks reflect it." For batch scoring, this means the order of transactions in the array affects scores. Transaction #1 in a batch of 500 from the same email will score 0 velocity points, but transaction #500 will score 25. This is correct fraud-detection behavior, but it means **batch results are order-dependent and not parallelizable**.
+
+**Recommendation:** Document this explicitly. Do NOT attempt to parallelize batch scoring. Process sequentially and note in the API docs that batch order affects velocity scores.
+
+### 5. Missing Validation on card_bin and card_last_four
+
+The Pydantic model validates length (`min_length=6, max_length=6`) but not that the values are numeric. A card_bin of "abcdef" would pass validation. Same for card_last_four.
+
+**Recommendation:** Add a `pattern` constraint: `Field(pattern=r"^\d{6}$")` for card_bin and `Field(pattern=r"^\d{4}$")` for card_last_four.
+
+### 6. Currency Field is Accepted but Ignored
+
+The plan accepts a `currency` field (default "USD") but the risk scoring algorithm never uses it. All amount comparisons appear to assume USD. If someone submits a transaction with `currency: "BRL"` and `amount: 500`, the amount anomaly check would treat 500 BRL the same as 500 USD (500 BRL is roughly 90 USD).
+
+**Recommendation:** Either (a) document that all amounts are assumed to be in USD and the currency field is informational only, or (b) remove the currency field from the scoring request to avoid confusion. The simplest approach is option (a) with a clear note.
+
+### 7. Scoring Algorithm Can Be Gamed
+
+The maximum score from the 6 signals is 100, but there is no minimum score for rejection. A sophisticated fraudster who:
+- Uses a non-disposable email (0 pts)
+- Makes only 1 transaction per 24h (0 pts)
+- Matches all geo fields (0 pts)
+- Buys apparel (0 pts)
+- Is a "repeat customer" (0 pts)
+- Keeps amounts near AOV (0 pts)
+
+...would score 0 and get APPROVE. This is inherent to any rule-based system, but worth noting. The rule engine (Requirement 4) partially mitigates this by allowing custom rules.
+
+**Recommendation:** Mention in the README/architecture docs that this is a first-pass heuristic system and would need ML-based behavioral analysis for sophisticated fraud. This shows awareness to reviewers.
+
+### 8. Performance: Chargeback Analysis with 200+ Records
+
+The plan says "All aggregations are done via SQL queries against the chargebacks table. Each analysis dimension is a separate query." With 200 records and 5-6 queries, this is fine. SQLite handles this in milliseconds. However, the `repeat_offenders` analysis requires GROUP BY + HAVING queries that are slightly more complex.
+
+**Recommendation:** No action needed for 200 records. Performance is a non-issue at this scale. The <500ms requirement from CHALLENGE.md applies to the risk scoring endpoint, not the analysis endpoint, so this is fine.
+
+### 9. Test Data: Challenge Asks for "10+ Transactions in 24 Hours"
+
+The challenge explicitly says: "Same email making **10+ transactions** in 24 hours." The plan's planted suspicious patterns only include "3 records with the same email within 1 hour." This is a velocity pattern but does not match the specific example given in the challenge. The velocity scoring table tops out at "7+" for max points, so 3 transactions only scores 5 points (the second tier).
+
+**Recommendation:** Add a planted pattern with 10+ transactions from the same email in the seed data to match the challenge's explicit example. This ensures the maximum velocity score (25 pts) is demonstrable.
+
+### 10. Missing Error Handling Scenarios
+
+The plan only lists `422 Unprocessable Entity` for validation errors. Missing:
+- What happens if the database file is corrupted or missing at startup?
+- What if `chargebacks.json` or `transactions.json` seed files are malformed?
+- Should there be a `GET /health` endpoint for basic health checking? (The plan mentions a "health check endpoint" in Phase 1 but it is not documented in the API endpoints section.)
+
+**Recommendation:** Document the health endpoint in the API section. Add basic error handling for seed data loading failures (log and continue with empty tables rather than crashing).
+
+### 11. Repeat Offender Model Mismatch
+
+The `RepeatOffender` Pydantic model uses a generic `identifier: str` field, but the JSON response example shows separate `email` and `card_bin` fields. The model and the example response are inconsistent.
+
+**Recommendation:** Either use separate models (`RepeatOffenderEmail` with `email` field, `RepeatOffenderCardBin` with `card_bin` field), or update the example response to use the `identifier` field. The example response is more readable, so consider matching the model to it.
+
+### 12. Missing `transaction_amount` in Chargeback Analysis Insights
+
+The challenge says to analyze "transaction amount" as part of chargeback data, and the schema includes it. But the analysis response does not break down chargebacks by amount ranges (e.g., what percentage of chargebacks are from orders over $300?). This could be a valuable 6th analysis dimension.
+
+**Recommendation:** Consider adding a `by_amount_range` breakdown (e.g., $0-50, $50-150, $150-300, $300+) to the analysis response. This is low effort and adds analytical depth.
+
+### Summary of Priority Actions
+
+| Priority | Issue | Action |
+|----------|-------|--------|
+| CRITICAL | SQL injection risk | Mandate parameterized queries everywhere |
+| HIGH | Test data velocity pattern too small | Add 10+ same-email transactions |
+| HIGH | card_bin/card_last_four not validated as numeric | Add regex pattern constraint |
+| MEDIUM | IP address vs IP country ambiguity | Clarify in plan or add ip_address field |
+| MEDIUM | Repeat offender model mismatch | Align model with example response |
+| MEDIUM | Batch scoring order dependency | Document explicitly |
+| LOW | Currency field unused | Document as informational |
+| LOW | Missing health endpoint docs | Add to API section |
+| LOW | Amount range analysis missing | Consider adding |
