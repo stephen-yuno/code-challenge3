@@ -1,6 +1,6 @@
 [
   {
-    "transaction_id": "txn_8c6b4f4d3f44",
+    "transaction_id": "txn_b3aa92322d03",
     "email": "maria.silva@gmail.com",
     "card_bin": "411111",
     "card_last_four": "4242",
@@ -15,7 +15,7 @@
     "timestamp": "2026-02-12T05:00:00Z"
   },
   {
-    "transaction_id": "txn_1fb253313d92",
+    "transaction_id": "txn_59e5e19db716",
     "email": "maria.silva@gmail.com",
     "card_bin": "411111",
     "card_last_four": "4242",
@@ -30,7 +30,7 @@
     "timestamp": "2026-01-27T09:00:00Z"
   },
   {
-    "transaction_id": "txn_1ccbb7d519d2",
+    "transaction_id": "txn_441b729bedf0",
     "email": "maria.silva@gmail.com",
     "card_bin": "411111",
     "card_last_four": "4242",
@@ -45,7 +45,7 @@
     "timestamp": "2026-01-31T23:00:00Z"
   },
   {
-    "transaction_id": "txn_e713a958c5a1",
+    "transaction_id": "txn_5bb5eb6bcf42",
     "email": "maria.silva@gmail.com",
     "card_bin": "411111",
     "card_last_four": "4242",
@@ -60,7 +60,7 @@
     "timestamp": "2026-02-19T10:00:00Z"
   },
   {
-    "transaction_id": "txn_4db40fefbb93",
+    "transaction_id": "txn_e7f249c556e5",
     "email": "sofia.martinez@protonmail.com",
     "card_bin": "411111",
     "card_last_four": "4257",
@@ -70,12 +70,12 @@
     "shipping_country": "BR",
     "ip_country": "BR",
     "product_category": "apparel",
-    "customer_id": "cust_f248828f",
+    "customer_id": "cust_995f8d66",
     "is_first_purchase": false,
     "timestamp": "2026-02-11T22:00:00Z"
   },
   {
-    "transaction_id": "txn_da3eec323787",
+    "transaction_id": "txn_2d6c34d389a1",
     "email": "diego.silva@outlook.com",
     "card_bin": "555555",
     "card_last_four": "6574",
@@ -85,12 +85,12 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "apparel",
-    "customer_id": "cust_62264fbb",
+    "customer_id": "cust_f5a36122",
     "is_first_purchase": false,
     "timestamp": "2026-02-15T06:00:00Z"
   },
   {
-    "transaction_id": "txn_0f765334383b",
+    "transaction_id": "txn_9891e348545c",
     "email": "ana.oliveira@hotmail.com",
     "card_bin": "510510",
     "card_last_four": "6881",
@@ -100,12 +100,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "electronics",
-    "customer_id": "cust_bbd1ccfa",
+    "customer_id": "cust_21d34ef3",
     "is_first_purchase": false,
     "timestamp": "2026-01-26T22:00:00Z"
   },
   {
-    "transaction_id": "txn_4300fa93f33a",
+    "transaction_id": "txn_f7ad136d0e43",
     "email": "ana.martins@gmail.com",
     "card_bin": "650000",
     "card_last_four": "5803",
@@ -115,12 +115,12 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "home_goods",
-    "customer_id": "cust_ce3a2d6f",
+    "customer_id": "cust_81112795",
     "is_first_purchase": false,
     "timestamp": "2026-01-31T01:00:00Z"
   },
   {
-    "transaction_id": "txn_9692c86c2d44",
+    "transaction_id": "txn_a246c20f77bd",
     "email": "miguel.oliveira@gmail.com",
     "card_bin": "370000",
     "card_last_four": "5741",
@@ -130,12 +130,12 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "apparel",
-    "customer_id": "cust_2f3ec8e5",
+    "customer_id": "cust_2fa30b41",
     "is_first_purchase": false,
     "timestamp": "2026-01-23T09:00:00Z"
   },
   {
-    "transaction_id": "txn_48ae550dcab1",
+    "transaction_id": "txn_3ab760ec1ffe",
     "email": "diego.garcia@yahoo.com",
     "card_bin": "340000",
     "card_last_four": "7065",
@@ -145,12 +145,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "apparel",
-    "customer_id": "cust_c4d8a147",
+    "customer_id": "cust_c3ab5300",
     "is_first_purchase": false,
     "timestamp": "2026-02-08T06:00:00Z"
   },
   {
-    "transaction_id": "txn_ca753656dd4f",
+    "transaction_id": "txn_f5a5970f3366",
     "email": "diego.oliveira@protonmail.com",
     "card_bin": "340000",
     "card_last_four": "9751",
@@ -160,12 +160,12 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "apparel",
-    "customer_id": "cust_b2459856",
+    "customer_id": "cust_fb36fb51",
     "is_first_purchase": false,
     "timestamp": "2026-02-07T04:00:00Z"
   },
   {
-    "transaction_id": "txn_cb9c6bb4d4fa",
+    "transaction_id": "txn_51569c2f692d",
     "email": "jose.hernandez@outlook.com",
     "card_bin": "424242",
     "card_last_four": "1916",
@@ -175,12 +175,12 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "apparel",
-    "customer_id": "cust_99319202",
+    "customer_id": "cust_019c3580",
     "is_first_purchase": false,
     "timestamp": "2026-02-12T11:00:00Z"
   },
   {
-    "transaction_id": "txn_889656f42035",
+    "transaction_id": "txn_7f9914ccd9ee",
     "email": "speed_buyer@temp-mail.org",
     "card_bin": "510510",
     "card_last_four": "9999",
@@ -195,7 +195,7 @@
     "timestamp": "2026-02-20T10:00:00Z"
   },
   {
-    "transaction_id": "txn_d4a051e7c876",
+    "transaction_id": "txn_61490987e272",
     "email": "speed_buyer@temp-mail.org",
     "card_bin": "510510",
     "card_last_four": "9999",
@@ -210,7 +210,7 @@
     "timestamp": "2026-02-20T10:15:00Z"
   },
   {
-    "transaction_id": "txn_f3937ef8a0a7",
+    "transaction_id": "txn_7f1da56579d1",
     "email": "speed_buyer@temp-mail.org",
     "card_bin": "510510",
     "card_last_four": "9999",
@@ -225,7 +225,7 @@
     "timestamp": "2026-02-20T10:30:00Z"
   },
   {
-    "transaction_id": "txn_1db0581e8bf1",
+    "transaction_id": "txn_5bb70747bf3e",
     "email": "andres.costa@outlook.com",
     "card_bin": "378282",
     "card_last_four": "7482",
@@ -235,12 +235,12 @@
     "shipping_country": "CO",
     "ip_country": "MX",
     "product_category": "home_goods",
-    "customer_id": "cust_b19217fe",
+    "customer_id": "cust_664e462d",
     "is_first_purchase": false,
     "timestamp": "2026-02-17T04:00:00Z"
   },
   {
-    "transaction_id": "txn_f773ed89340c",
+    "transaction_id": "txn_d90d56c86129",
     "email": "pedro.pereira@protonmail.com",
     "card_bin": "650000",
     "card_last_four": "5304",
@@ -250,12 +250,12 @@
     "shipping_country": "CO",
     "ip_country": "MX",
     "product_category": "home_goods",
-    "customer_id": "cust_1e83fa06",
+    "customer_id": "cust_ef78419c",
     "is_first_purchase": false,
     "timestamp": "2026-02-14T05:00:00Z"
   },
   {
-    "transaction_id": "txn_eb353fdb5b61",
+    "transaction_id": "txn_a7fe1c53ce22",
     "email": "pedro.martinez@hotmail.com",
     "card_bin": "510510",
     "card_last_four": "1771",
@@ -265,12 +265,12 @@
     "shipping_country": "CO",
     "ip_country": "MX",
     "product_category": "electronics",
-    "customer_id": "cust_790d8161",
+    "customer_id": "cust_08a58703",
     "is_first_purchase": true,
     "timestamp": "2026-02-09T07:00:00Z"
   },
   {
-    "transaction_id": "txn_a0c8c27e8ede",
+    "transaction_id": "txn_d8057463dd5d",
     "email": "elena.carvalho@protonmail.com",
     "card_bin": "510510",
     "card_last_four": "7304",
@@ -285,7 +285,7 @@
     "timestamp": "2026-02-18T15:00:00Z"
   },
   {
-    "transaction_id": "txn_16c19d7f9083",
+    "transaction_id": "txn_463628ffd5ab",
     "email": "mariana.souza@protonmail.com",
     "card_bin": "601100",
     "card_last_four": "6573",
@@ -300,7 +300,7 @@
     "timestamp": "2026-02-16T22:00:00Z"
   },
   {
-    "transaction_id": "txn_0316c2dc5b58",
+    "transaction_id": "txn_9e40e2363ad3",
     "email": "buyer996@temp-mail.org",
     "card_bin": "601100",
     "card_last_four": "9201",
@@ -310,12 +310,12 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "electronics",
-    "customer_id": "cust_b366deb2",
+    "customer_id": "cust_cde201b2",
     "is_first_purchase": false,
     "timestamp": "2026-02-02T17:00:00Z"
   },
   {
-    "transaction_id": "txn_7dba3147f590",
+    "transaction_id": "txn_7eb144822e7f",
     "email": "buyer482@guerrillamail.com",
     "card_bin": "340000",
     "card_last_four": "9837",
@@ -325,12 +325,12 @@
     "shipping_country": "BR",
     "ip_country": "BR",
     "product_category": "home_goods",
-    "customer_id": "cust_be41bf69",
+    "customer_id": "cust_43aab4da",
     "is_first_purchase": true,
     "timestamp": "2026-01-31T02:00:00Z"
   },
   {
-    "transaction_id": "txn_4d5c176ad791",
+    "transaction_id": "txn_25281cce5181",
     "email": "buyer214@throwaway.email",
     "card_bin": "424242",
     "card_last_four": "6038",
@@ -340,12 +340,12 @@
     "shipping_country": "BR",
     "ip_country": "BR",
     "product_category": "home_goods",
-    "customer_id": "cust_1ab93611",
+    "customer_id": "cust_1f0785a1",
     "is_first_purchase": true,
     "timestamp": "2026-02-16T13:00:00Z"
   },
   {
-    "transaction_id": "txn_66b2ecce147d",
+    "transaction_id": "txn_87fde3a040e3",
     "email": "xk7q9m2p@guerrillamail.com",
     "card_bin": "510510",
     "card_last_four": "0001",
@@ -360,7 +360,7 @@
     "timestamp": "2026-02-20T11:00:00Z"
   },
   {
-    "transaction_id": "txn_f27aacc28647",
+    "transaction_id": "txn_7c187bdbd002",
     "email": "fernanda.hernandez@outlook.com",
     "card_bin": "601100",
     "card_last_four": "9645",
@@ -370,12 +370,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "electronics",
-    "customer_id": "cust_eeeb3a40",
+    "customer_id": "cust_1caa80a5",
     "is_first_purchase": false,
     "timestamp": "2026-01-12T23:00:00Z"
   },
   {
-    "transaction_id": "txn_66ff0b3f555f",
+    "transaction_id": "txn_36ee3875bba2",
     "email": "rafael.ribeiro@hotmail.com",
     "card_bin": "650000",
     "card_last_four": "8397",
@@ -385,12 +385,12 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "home_goods",
-    "customer_id": "cust_129d3b65",
+    "customer_id": "cust_1aed2da2",
     "is_first_purchase": false,
     "timestamp": "2026-01-30T12:00:00Z"
   },
   {
-    "transaction_id": "txn_f9efe8115696",
+    "transaction_id": "txn_14f83475bebb",
     "email": "jorge.santos@yahoo.com",
     "card_bin": "510510",
     "card_last_four": "9423",
@@ -400,12 +400,12 @@
     "shipping_country": "BR",
     "ip_country": "MX",
     "product_category": "electronics",
-    "customer_id": "cust_2e4fbf1a",
+    "customer_id": "cust_e2df0f2d",
     "is_first_purchase": true,
     "timestamp": "2026-02-05T04:00:00Z"
   },
   {
-    "transaction_id": "txn_fcb37b7c7470",
+    "transaction_id": "txn_7da460d81bf0",
     "email": "fernanda.pereira@hotmail.com",
     "card_bin": "555555",
     "card_last_four": "4119",
@@ -415,12 +415,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "electronics",
-    "customer_id": "cust_9deab892",
+    "customer_id": "cust_d0db65a0",
     "is_first_purchase": true,
     "timestamp": "2026-01-28T23:00:00Z"
   },
   {
-    "transaction_id": "txn_ab4ab94be0c8",
+    "transaction_id": "txn_96938c6be685",
     "email": "joao.martins@yahoo.com",
     "card_bin": "510510",
     "card_last_four": "5073",
@@ -430,12 +430,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "home_goods",
-    "customer_id": "cust_97beef7f",
+    "customer_id": "cust_ebb52ee7",
     "is_first_purchase": true,
     "timestamp": "2026-02-08T06:00:00Z"
   },
   {
-    "transaction_id": "txn_8958d93d0d6a",
+    "transaction_id": "txn_fd79fc58d47c",
     "email": "carlos.garcia@protonmail.com",
     "card_bin": "510510",
     "card_last_four": "1828",
@@ -445,12 +445,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "electronics",
-    "customer_id": "cust_ed59200a",
+    "customer_id": "cust_ce196445",
     "is_first_purchase": true,
     "timestamp": "2026-02-20T10:00:00Z"
   },
   {
-    "transaction_id": "txn_fd6fcaa1535d",
+    "transaction_id": "txn_253ebd31035a",
     "email": "rafael.santos@outlook.com",
     "card_bin": "555555",
     "card_last_four": "1035",
@@ -460,12 +460,12 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "home_goods",
-    "customer_id": "cust_efbae760",
+    "customer_id": "cust_5f10583d",
     "is_first_purchase": true,
     "timestamp": "2026-01-27T04:00:00Z"
   },
   {
-    "transaction_id": "txn_62a52e414085",
+    "transaction_id": "txn_d2f099945384",
     "email": "elena.hernandez@hotmail.com",
     "card_bin": "340000",
     "card_last_four": "4111",
@@ -475,12 +475,12 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "home_goods",
-    "customer_id": "cust_9e3d36ef",
+    "customer_id": "cust_5909b364",
     "is_first_purchase": true,
     "timestamp": "2026-01-13T13:00:00Z"
   },
   {
-    "transaction_id": "txn_21792a3628d7",
+    "transaction_id": "txn_fb62810cdf6f",
     "email": "natalia.martinez@outlook.com",
     "card_bin": "411111",
     "card_last_four": "9320",
@@ -490,12 +490,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "home_goods",
-    "customer_id": "cust_4eb5a37e",
+    "customer_id": "cust_56323129",
     "is_first_purchase": true,
     "timestamp": "2026-02-15T07:00:00Z"
   },
   {
-    "transaction_id": "txn_1f295b7b4ad1",
+    "transaction_id": "txn_fc21b1da87b3",
     "email": "andres.pereira@protonmail.com",
     "card_bin": "402400",
     "card_last_four": "1651",
@@ -505,12 +505,12 @@
     "shipping_country": "BR",
     "ip_country": "BR",
     "product_category": "electronics",
-    "customer_id": "cust_4d97b892",
+    "customer_id": "cust_0bf0e1f2",
     "is_first_purchase": false,
     "timestamp": "2026-01-13T18:00:00Z"
   },
   {
-    "transaction_id": "txn_db01dc5e9827",
+    "transaction_id": "txn_5382c20c4711",
     "email": "rafael.rodrigues@yahoo.com",
     "card_bin": "378282",
     "card_last_four": "6180",
@@ -520,12 +520,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "home_goods",
-    "customer_id": "cust_b75e34c1",
+    "customer_id": "cust_ee8fcbf4",
     "is_first_purchase": true,
     "timestamp": "2026-02-16T12:00:00Z"
   },
   {
-    "transaction_id": "txn_bb0d50086457",
+    "transaction_id": "txn_ca8dd6d4b7f6",
     "email": "pedro.ribeiro@gmail.com",
     "card_bin": "370000",
     "card_last_four": "7054",
@@ -535,12 +535,12 @@
     "shipping_country": "BR",
     "ip_country": "MX",
     "product_category": "home_goods",
-    "customer_id": "cust_6fe3afc5",
+    "customer_id": "cust_ec49e79e",
     "is_first_purchase": false,
     "timestamp": "2026-01-16T14:00:00Z"
   },
   {
-    "transaction_id": "txn_62d2f1e6f179",
+    "transaction_id": "txn_c19676f01286",
     "email": "daniela.gomes@gmail.com",
     "card_bin": "340000",
     "card_last_four": "5333",
@@ -550,12 +550,12 @@
     "shipping_country": "BR",
     "ip_country": "BR",
     "product_category": "home_goods",
-    "customer_id": "cust_53cb9898",
+    "customer_id": "cust_8d20e9c5",
     "is_first_purchase": false,
     "timestamp": "2026-02-13T09:00:00Z"
   },
   {
-    "transaction_id": "txn_19236af487e4",
+    "transaction_id": "txn_93bb78ac27dd",
     "email": "catalina.lima@protonmail.com",
     "card_bin": "378282",
     "card_last_four": "5114",
@@ -565,12 +565,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "electronics",
-    "customer_id": "cust_ba748dbe",
+    "customer_id": "cust_05e868be",
     "is_first_purchase": true,
     "timestamp": "2026-02-14T16:00:00Z"
   },
   {
-    "transaction_id": "txn_24833a2c9c93",
+    "transaction_id": "txn_cfa492bba2ca",
     "email": "diego.ferreira@hotmail.com",
     "card_bin": "650000",
     "card_last_four": "8007",
@@ -580,12 +580,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "electronics",
-    "customer_id": "cust_6539f3b3",
+    "customer_id": "cust_191f7198",
     "is_first_purchase": true,
     "timestamp": "2026-01-16T12:00:00Z"
   },
   {
-    "transaction_id": "txn_81df93f6d125",
+    "transaction_id": "txn_0276f01c8ad7",
     "email": "andres.hernandez@outlook.com",
     "card_bin": "555555",
     "card_last_four": "3088",
@@ -595,12 +595,12 @@
     "shipping_country": "MX",
     "ip_country": "BR",
     "product_category": "home_goods",
-    "customer_id": "cust_db824367",
+    "customer_id": "cust_95d5c5c6",
     "is_first_purchase": false,
     "timestamp": "2026-02-18T01:00:00Z"
   },
   {
-    "transaction_id": "txn_f36370d9ba58",
+    "transaction_id": "txn_0e11f421ccb3",
     "email": "isabella.torres@outlook.com",
     "card_bin": "370000",
     "card_last_four": "3662",
@@ -610,12 +610,12 @@
     "shipping_country": "BR",
     "ip_country": "BR",
     "product_category": "electronics",
-    "customer_id": "cust_ed1f9d26",
+    "customer_id": "cust_96a0f8ed",
     "is_first_purchase": true,
     "timestamp": "2026-02-08T23:00:00Z"
   },
   {
-    "transaction_id": "txn_84590153ab13",
+    "transaction_id": "txn_6ec07d7a5209",
     "email": "natalia.pereira@yahoo.com",
     "card_bin": "340000",
     "card_last_four": "2771",
@@ -625,12 +625,12 @@
     "shipping_country": "BR",
     "ip_country": "BR",
     "product_category": "home_goods",
-    "customer_id": "cust_342e9480",
+    "customer_id": "cust_70425b8e",
     "is_first_purchase": true,
     "timestamp": "2026-01-21T05:00:00Z"
   },
   {
-    "transaction_id": "txn_3f131a7293fc",
+    "transaction_id": "txn_24ecf0daed43",
     "email": "sofia.silva@outlook.com",
     "card_bin": "555555",
     "card_last_four": "6378",
@@ -640,12 +640,12 @@
     "shipping_country": "BR",
     "ip_country": "BR",
     "product_category": "home_goods",
-    "customer_id": "cust_18df3baf",
+    "customer_id": "cust_857092a2",
     "is_first_purchase": true,
     "timestamp": "2026-02-03T10:00:00Z"
   },
   {
-    "transaction_id": "txn_c1b2840eaa6a",
+    "transaction_id": "txn_9dac01ea113c",
     "email": "daniela.costa@gmail.com",
     "card_bin": "510510",
     "card_last_four": "5279",
@@ -655,12 +655,12 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "electronics",
-    "customer_id": "cust_d805ebfc",
+    "customer_id": "cust_c11629e5",
     "is_first_purchase": false,
     "timestamp": "2026-02-04T11:00:00Z"
   },
   {
-    "transaction_id": "txn_a1bed64b9248",
+    "transaction_id": "txn_afb10866c531",
     "email": "mateo.souza@hotmail.com",
     "card_bin": "402400",
     "card_last_four": "4114",
@@ -670,12 +670,12 @@
     "shipping_country": "BR",
     "ip_country": "BR",
     "product_category": "apparel",
-    "customer_id": "cust_cee1ecdf",
+    "customer_id": "cust_7a4688b0",
     "is_first_purchase": false,
     "timestamp": "2026-02-04T11:00:00Z"
   },
   {
-    "transaction_id": "txn_4ef23e0c3141",
+    "transaction_id": "txn_9b9f553196cf",
     "email": "mariana.alves@yahoo.com",
     "card_bin": "555555",
     "card_last_four": "2146",
@@ -685,12 +685,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "electronics",
-    "customer_id": "cust_dca46d24",
+    "customer_id": "cust_48f03636",
     "is_first_purchase": false,
     "timestamp": "2026-01-12T02:00:00Z"
   },
   {
-    "transaction_id": "txn_981ddada79c4",
+    "transaction_id": "txn_5ea5faf02841",
     "email": "gabriel.martins@yahoo.com",
     "card_bin": "650000",
     "card_last_four": "3085",
@@ -700,12 +700,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "electronics",
-    "customer_id": "cust_4c153d4d",
+    "customer_id": "cust_7220f536",
     "is_first_purchase": false,
     "timestamp": "2026-02-07T23:00:00Z"
   },
   {
-    "transaction_id": "txn_4d8607edca9e",
+    "transaction_id": "txn_c5ba4bab34a4",
     "email": "rafael.hernandez@gmail.com",
     "card_bin": "601100",
     "card_last_four": "5700",
@@ -715,12 +715,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "apparel",
-    "customer_id": "cust_93511bcc",
+    "customer_id": "cust_2bfb852c",
     "is_first_purchase": false,
     "timestamp": "2026-01-12T16:00:00Z"
   },
   {
-    "transaction_id": "txn_a1bc0954704b",
+    "transaction_id": "txn_62ecdceee07d",
     "email": "elena.ferreira@gmail.com",
     "card_bin": "601100",
     "card_last_four": "9445",
@@ -730,12 +730,12 @@
     "shipping_country": "BR",
     "ip_country": "BR",
     "product_category": "apparel",
-    "customer_id": "cust_29e20c49",
+    "customer_id": "cust_b2046c88",
     "is_first_purchase": false,
     "timestamp": "2026-01-08T16:00:00Z"
   },
   {
-    "transaction_id": "txn_ab6dfb412211",
+    "transaction_id": "txn_aaff2d880f27",
     "email": "elena.alves@outlook.com",
     "card_bin": "411111",
     "card_last_four": "1757",
@@ -745,12 +745,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "electronics",
-    "customer_id": "cust_1319f76c",
+    "customer_id": "cust_6421c9d1",
     "is_first_purchase": false,
     "timestamp": "2026-02-15T22:00:00Z"
   },
   {
-    "transaction_id": "txn_56250e169d24",
+    "transaction_id": "txn_b31276a324b6",
     "email": "sofia.rodrigues@gmail.com",
     "card_bin": "510510",
     "card_last_four": "7965",
@@ -760,12 +760,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "apparel",
-    "customer_id": "cust_5607750a",
+    "customer_id": "cust_9a71559b",
     "is_first_purchase": true,
     "timestamp": "2026-02-06T07:00:00Z"
   },
   {
-    "transaction_id": "txn_d24074886fea",
+    "transaction_id": "txn_ad425430df0a",
     "email": "ana.garcia@outlook.com",
     "card_bin": "378282",
     "card_last_four": "9702",
@@ -775,12 +775,12 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "apparel",
-    "customer_id": "cust_008baba8",
+    "customer_id": "cust_a0c94b40",
     "is_first_purchase": false,
     "timestamp": "2026-01-22T17:00:00Z"
   },
   {
-    "transaction_id": "txn_90a9b5f83188",
+    "transaction_id": "txn_ee04dfbd0189",
     "email": "lucia.lopez@hotmail.com",
     "card_bin": "601100",
     "card_last_four": "5050",
@@ -790,12 +790,12 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "home_goods",
-    "customer_id": "cust_6adf3946",
+    "customer_id": "cust_e3440042",
     "is_first_purchase": false,
     "timestamp": "2026-01-11T04:00:00Z"
   },
   {
-    "transaction_id": "txn_01a302459c42",
+    "transaction_id": "txn_b1ba73da58d0",
     "email": "sofia.lima@yahoo.com",
     "card_bin": "424242",
     "card_last_four": "9849",
@@ -805,12 +805,12 @@
     "shipping_country": "CO",
     "ip_country": "MX",
     "product_category": "apparel",
-    "customer_id": "cust_209b8ef4",
+    "customer_id": "cust_c55fefb9",
     "is_first_purchase": false,
     "timestamp": "2026-01-26T14:00:00Z"
   },
   {
-    "transaction_id": "txn_42ffde3eb6be",
+    "transaction_id": "txn_a39c2938d378",
     "email": "joao.alves@hotmail.com",
     "card_bin": "555555",
     "card_last_four": "1320",
@@ -820,12 +820,12 @@
     "shipping_country": "BR",
     "ip_country": "BR",
     "product_category": "electronics",
-    "customer_id": "cust_a4316f92",
+    "customer_id": "cust_29043740",
     "is_first_purchase": false,
     "timestamp": "2026-01-15T00:00:00Z"
   },
   {
-    "transaction_id": "txn_d81d45bae3ff",
+    "transaction_id": "txn_2464aed65867",
     "email": "ricardo.carvalho@protonmail.com",
     "card_bin": "650000",
     "card_last_four": "4613",
@@ -835,12 +835,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "home_goods",
-    "customer_id": "cust_f01a50d5",
+    "customer_id": "cust_6df35d29",
     "is_first_purchase": true,
     "timestamp": "2026-01-20T12:00:00Z"
   },
   {
-    "transaction_id": "txn_2d6fa5bca5c3",
+    "transaction_id": "txn_1ff8aec92b30",
     "email": "andrea.rodrigues@protonmail.com",
     "card_bin": "650000",
     "card_last_four": "1441",
@@ -850,12 +850,12 @@
     "shipping_country": "BR",
     "ip_country": "BR",
     "product_category": "apparel",
-    "customer_id": "cust_21a88045",
+    "customer_id": "cust_0d8db406",
     "is_first_purchase": false,
     "timestamp": "2026-01-25T18:00:00Z"
   },
   {
-    "transaction_id": "txn_6a54495a2e88",
+    "transaction_id": "txn_e4aa38e14bad",
     "email": "diego.martins@yahoo.com",
     "card_bin": "370000",
     "card_last_four": "8449",
@@ -865,12 +865,12 @@
     "shipping_country": "CO",
     "ip_country": "MX",
     "product_category": "electronics",
-    "customer_id": "cust_2ceafbd4",
+    "customer_id": "cust_bcb195a2",
     "is_first_purchase": false,
     "timestamp": "2026-01-27T04:00:00Z"
   },
   {
-    "transaction_id": "txn_193eece3f9b5",
+    "transaction_id": "txn_adc5607f8da3",
     "email": "joao.ribeiro@outlook.com",
     "card_bin": "510510",
     "card_last_four": "1659",
@@ -880,12 +880,12 @@
     "shipping_country": "BR",
     "ip_country": "CO",
     "product_category": "home_goods",
-    "customer_id": "cust_22a9d48c",
+    "customer_id": "cust_638e4653",
     "is_first_purchase": true,
     "timestamp": "2026-02-19T05:00:00Z"
   },
   {
-    "transaction_id": "txn_f02a71e898cf",
+    "transaction_id": "txn_dc8e6dad0e1c",
     "email": "miguel.garcia@yahoo.com",
     "card_bin": "424242",
     "card_last_four": "3749",
@@ -895,12 +895,12 @@
     "shipping_country": "MX",
     "ip_country": "BR",
     "product_category": "electronics",
-    "customer_id": "cust_f0063d6c",
+    "customer_id": "cust_88d157bc",
     "is_first_purchase": true,
     "timestamp": "2026-01-06T09:00:00Z"
   },
   {
-    "transaction_id": "txn_140ab1264c46",
+    "transaction_id": "txn_1578ea4dee02",
     "email": "andres.martins@hotmail.com",
     "card_bin": "370000",
     "card_last_four": "2245",
@@ -910,12 +910,12 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "electronics",
-    "customer_id": "cust_6bc96d26",
+    "customer_id": "cust_51eda65b",
     "is_first_purchase": true,
     "timestamp": "2026-01-13T14:00:00Z"
   },
   {
-    "transaction_id": "txn_831568cf0232",
+    "transaction_id": "txn_0381c58f2800",
     "email": "elena.souza@protonmail.com",
     "card_bin": "411111",
     "card_last_four": "6688",
@@ -925,12 +925,12 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "electronics",
-    "customer_id": "cust_54bd64cf",
+    "customer_id": "cust_265372f0",
     "is_first_purchase": false,
     "timestamp": "2026-02-15T20:00:00Z"
   },
   {
-    "transaction_id": "txn_ad8a2022e1d2",
+    "transaction_id": "txn_d4b0f3226f3f",
     "email": "camila.garcia@outlook.com",
     "card_bin": "555555",
     "card_last_four": "3885",
@@ -940,12 +940,12 @@
     "shipping_country": "MX",
     "ip_country": "MX",
     "product_category": "electronics",
-    "customer_id": "cust_8725015d",
+    "customer_id": "cust_96281d25",
     "is_first_purchase": false,
     "timestamp": "2026-01-17T16:00:00Z"
   },
   {
-    "transaction_id": "txn_0014e061878c",
+    "transaction_id": "txn_a90ef51c57ac",
     "email": "mariana.gonzalez@yahoo.com",
     "card_bin": "424242",
     "card_last_four": "5022",
@@ -955,12 +955,12 @@
     "shipping_country": "BR",
     "ip_country": "BR",
     "product_category": "home_goods",
-    "customer_id": "cust_524b9422",
+    "customer_id": "cust_6168697a",
     "is_first_purchase": false,
     "timestamp": "2026-01-23T05:00:00Z"
   },
   {
-    "transaction_id": "txn_7d01d7a72459",
+    "transaction_id": "txn_b5f5c2d3cbd9",
     "email": "gabriel.ferreira@hotmail.com",
     "card_bin": "370000",
     "card_last_four": "6813",
@@ -970,7 +970,7 @@
     "shipping_country": "CO",
     "ip_country": "CO",
     "product_category": "apparel",
-    "customer_id": "cust_6117221f",
+    "customer_id": "cust_30b62ff7",
     "is_first_purchase": false,
     "timestamp": "2026-02-04T02:00:00Z"
   }
