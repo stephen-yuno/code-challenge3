@@ -1,7 +1,5 @@
-from __future__ import annotations
-
 from datetime import datetime
-from typing import Any, Literal, Optional
+from typing import Any, List, Literal, Optional
 
 from pydantic import BaseModel, Field
 
@@ -15,8 +13,8 @@ class RuleCondition(BaseModel):
 
 class RuleRequest(BaseModel):
     name: str
-    description: str | None = None
-    conditions: list[RuleCondition] = Field(min_length=1)
+    description: Optional[str] = None
+    conditions: List[RuleCondition] = Field(min_length=1)
     action: Literal["APPROVE", "MANUAL_REVIEW", "REJECT"]
     risk_score_modifier: int = Field(default=0, ge=-50, le=50)
     priority: int = Field(default=0, ge=0)

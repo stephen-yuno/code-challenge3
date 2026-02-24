@@ -1,3 +1,5 @@
+from typing import Dict, List
+
 from pydantic import BaseModel, Field
 
 
@@ -45,16 +47,16 @@ class RepeatOffender(BaseModel):
 
 
 class RepeatOffenders(BaseModel):
-    by_email: list[RepeatOffender]
-    by_card_bin: list[RepeatOffender]
+    by_email: List[RepeatOffender]
+    by_card_bin: List[RepeatOffender]
 
 
 class ChargebackAnalysisResponse(BaseModel):
     total_chargebacks: int
-    analysis_period: dict
-    by_country: list[CountryAnalysis]
-    by_product_category: list[CategoryAnalysis]
-    by_reason_code: list[ReasonCodeAnalysis]
+    analysis_period: Dict[str, str]
+    by_country: List[CountryAnalysis]
+    by_product_category: List[CategoryAnalysis]
+    by_reason_code: List[ReasonCodeAnalysis]
     time_to_chargeback: TimeToChargeback
     repeat_offenders: RepeatOffenders
-    summary: list[str]
+    summary: List[str]

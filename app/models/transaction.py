@@ -1,7 +1,5 @@
-from __future__ import annotations
-
 from datetime import datetime
-from typing import Literal, Optional
+from typing import List, Literal, Optional
 
 from pydantic import BaseModel, Field
 
@@ -33,12 +31,12 @@ class RiskScoreResponse(BaseModel):
     risk_score: int = Field(ge=0, le=100)
     risk_level: Literal["LOW", "MEDIUM", "HIGH", "CRITICAL"]
     recommended_action: Literal["APPROVE", "MANUAL_REVIEW", "REJECT"]
-    risk_factors: list[RiskFactor]
+    risk_factors: List[RiskFactor]
     scored_at: datetime
 
 
 class BatchScoreRequest(BaseModel):
-    transactions: list[TransactionRequest] = Field(max_length=500)
+    transactions: List[TransactionRequest] = Field(max_length=500)
 
 
 class BatchSummary(BaseModel):
@@ -51,4 +49,4 @@ class BatchScoreResponse(BaseModel):
     total: int
     scored_at: datetime
     summary: BatchSummary
-    results: list[RiskScoreResponse]
+    results: List[RiskScoreResponse]
